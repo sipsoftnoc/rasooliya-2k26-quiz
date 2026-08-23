@@ -1,10 +1,8 @@
 import { getStore } from "@netlify/blobs";
 
-const store = getStore({
-  name: "rasooliya-quiz",
+const store = getStore("rasooliya-quiz", {
   consistency: "strong"
 });
-
 const json = (statusCode, data) => ({
   statusCode,
   headers: {
