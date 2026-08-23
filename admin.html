@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>റസൂലിയ 2K26 — Admin</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="app-bg">
+<div class="overlay"></div>
+<main class="container wide">
+  <header class="hero compact">
+    <div class="brand-pill">ADMIN PANEL</div>
+    <h1>റസൂലിയ 2K26</h1>
+    <p>നൂറുൽ ഇസ്ലാം മദ്രസ്സ, പാലപ്പള്ളി</p>
+  </header>
+
+  <section id="loginCard" class="card max-small">
+    <h2>Admin Login</h2>
+    <form id="loginForm">
+      <label>Admin Password
+        <input id="password" type="password" required placeholder="Password">
+      </label>
+      <button class="btn primary" type="submit">Login</button>
+    </form>
+    <div id="loginMsg" class="notice"></div>
+  </section>
+
+  <div id="adminApp" class="hidden">
+    <div class="toolbar card">
+      <div>
+        <span class="status-dot"></span>
+        <strong id="contestStatus">Waiting</strong>
+      </div>
+      <div class="toolbar-actions">
+        <a class="btn ghost small" href="screen.html" target="_blank">Live Screen</a>
+        <button id="resetBtn" class="btn danger small">Reset Contest</button>
+        <button id="logoutAdmin" class="btn ghost small">Logout</button>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <section class="card">
+        <h2>ചോദ്യം ചേർക്കുക</h2>
+        <form id="questionForm">
+          <label>ചോദ്യം
+            <textarea id="qText" rows="4" required maxlength="3000" placeholder="ചോദ്യം എഴുതുക..."></textarea>
+          </label>
+          <label>ശരിയായ ഉത്തരം (Admin reference)
+            <textarea id="correctAnswer" rows="3" maxlength="1000" placeholder="ശരിയായ ഉത്തരം"></textarea>
+          </label>
+          <label>Question Photo
+            <input id="qImage" type="file" accept="image/*">
+          </label>
+          <div id="imagePreviewWrap" class="hidden">
+            <img id="imagePreview" class="preview-image" alt="Preview">
+          </div>
+          <button class="btn primary" type="submit">ചോദ്യം ചേർക്കുക</button>
+        </form>
+        <div id="questionMsg" class="notice"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>ചോദ്യങ്ങൾ</h2>
+          <span id="questionCount" class="count-badge">0</span>
+        </div>
+        <div id="questionList" class="list"></div>
+      </section>
+    </div>
+
+    <section class="card">
+      <div class="section-head">
+        <h2>നിലവിലെ ചോദ്യം & Answer Review</h2>
+        <div class="row">
+          <button id="prevBtn" class="btn ghost small">Previous</button>
+          <button id="startBtn" class="btn primary small">Start Question</button>
+          <button id="nextBtn" class="btn secondary small">Next Question</button>
+          <button id="stopBtn" class="btn danger small">Stop</button>
+        </div>
+      </div>
+      <div id="activeQuestionBox" class="active-question"></div>
+      <div id="submissionList" class="submission-list"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <h2>Live Scoreboard</h2>
+        <a class="btn ghost small" href="screen.html" target="_blank">Open Score Screen</a>
+      </div>
+      <div id="scoreList" class="score-list"></div>
+    </section>
+  </div>
+</main>
+<script src="admin.js"></script>
+</body>
+</html>

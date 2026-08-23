@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>റസൂലിയ 2K26 — Participant</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="app-bg">
+<div class="overlay"></div>
+<main class="container narrow">
+  <header class="hero">
+    <div class="brand-pill">RASOOLIYA 2K26</div>
+    <h1>റസൂലിയ 2K26</h1>
+    <p>നൂറുൽ ഇസ്ലാം മദ്രസ്സ, പാലപ്പള്ളി</p>
+  </header>
+
+  <section id="registerCard" class="card">
+    <h2>മത്സരാർത്ഥി രജിസ്ട്രേഷൻ</h2>
+    <p class="muted">പേര്, മൊബൈൽ നമ്പർ നൽകി മത്സരത്തിൽ പ്രവേശിക്കുക.</p>
+    <form id="registerForm">
+      <label>പേര്
+        <input id="name" required maxlength="80" placeholder="നിങ്ങളുടെ പേര്">
+      </label>
+      <label>മൊബൈൽ നമ്പർ
+        <input id="mobile" required maxlength="20" inputmode="tel" placeholder="Mobile Number">
+      </label>
+      <button class="btn primary" type="submit">രജിസ്റ്റർ ചെയ്യുക</button>
+    </form>
+    <div id="registerMsg" class="notice"></div>
+  </section>
+
+  <section id="quizCard" class="card hidden">
+    <div class="participant-head">
+      <div>
+        <div class="eyebrow">മത്സരാർത്ഥി</div>
+        <strong id="participantName"></strong>
+      </div>
+      <button id="logoutBtn" class="btn ghost small">പുറത്ത്</button>
+    </div>
+
+    <div id="waiting" class="state-box">
+      <div class="pulse">●</div>
+      <h2>മത്സരം ആരംഭിക്കുന്നതിനായി കാത്തിരിക്കുക</h2>
+      <p>അഡ്മിൻ ചോദ്യം ആരംഭിച്ചാൽ ഇവിടെ കാണാം.</p>
+    </div>
+
+    <div id="questionArea" class="hidden">
+      <div class="question-top">
+        <span id="questionNumber" class="q-badge"></span>
+        <span id="timer" class="timer">03:00</span>
+      </div>
+      <h2 id="questionText" class="question"></h2>
+      <img id="questionImage" class="question-image hidden" alt="Question image">
+      <form id="answerForm">
+        <label>നിങ്ങളുടെ ഉത്തരം
+          <textarea id="answer" rows="4" maxlength="1000" required placeholder="ഉത്തരം ഇവിടെ ടൈപ്പ് ചെയ്യുക..."></textarea>
+        </label>
+        <button id="submitAnswer" class="btn primary big" type="submit">ഉത്തരം സമർപ്പിക്കുക</button>
+      </form>
+      <div id="submittedBox" class="success-box hidden">
+        <strong>ഉത്തരം സമർപ്പിച്ചു ✓</strong>
+        <span>അഡ്മിൻ നിങ്ങളുടെ ഉത്തരം പരിശോധിക്കും.</span>
+      </div>
+    </div>
+
+    <div id="finished" class="state-box hidden">
+      <h2>മത്സരം അവസാനിച്ചു</h2>
+      <p>നന്ദി. സ്കോർ സ്ക്രീനിൽ ഫലം കാണാം.</p>
+    </div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
